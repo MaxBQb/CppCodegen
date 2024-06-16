@@ -2,13 +2,13 @@
 
 int main() {
     /*#py
-        import pycodegen.scripts.test1 as c
-        c.test1()
+        scripts.test1(4)
     #py{*/
     std::cout << "1!" << std::endl;
     std::cout << "2!" << std::endl;
     std::cout << "3!" << std::endl;
-    //#py} (checksum: 131f858367ecbfd26647b2293061d884)
+    std::cout << "4!" << std::endl;
+    //#py} (checksum: 69c26b6fc05a904729370892bfe6a448)
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }

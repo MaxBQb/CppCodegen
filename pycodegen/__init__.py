@@ -1,3 +1,3 @@
 import cog
 from pycodegen.base import *
-import pycodegen.scripts
+import pycodegen.scripts as scripts
