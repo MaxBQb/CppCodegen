@@ -6,5 +6,5 @@ pip install cogapp
 
 generate with:
 ```commandline
-cog -r --check -c --markers="#py #py{ #py}" --verbosity=1 main.cpp
+cog -r --check -c --markers="#py #py{ #py}" --verbosity=1 @coglist.txt
 ```
