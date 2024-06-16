@@ -2,9 +2,8 @@
 
 int main() {
     /*#py
-        import cog
-        for i in range(1, 4):
-            cog.outl(f'std::cout << "{i}!" << std::endl;')
+        import pycodegen.scripts.test1 as c
+        c.test1()
     #py{*/
     std::cout << "1!" << std::endl;
     std::cout << "2!" << std::endl;
