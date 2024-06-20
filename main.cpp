@@ -1,5 +1,14 @@
 #include <iostream>
 
+//#py interface() #py{
+class A {
+public:
+    virtual ~A() = 0 {}
+    virtual int getSomething() = 0;
+    virtual int getSomething2() = 0;
+};
+//#py} (checksum: 3fab514dbf0f0a7ebde3b8f8da4f1970)
+
 int main() {
     /*#py
         scripts.test1(4)

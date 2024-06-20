@@ -23,12 +23,19 @@ def is_codein_wrapped():
     return lines[0].endswith(__GEN_START) and lines[-1].endswith(__GEN_END)
 
 
+def index_of(lines: list[str], text: str):
+    try:
+        return [e.strip() for e in lines].index(text)
+    except ValueError:
+        return -1
+
+
 def get_code_input():
     lines = get_code_lines()
     if not is_codein_wrapped():
         return lines
 
-    end_index = [e.strip() for e in lines].index(__GEN_BETWEEN)
+    end_index = index_of([e.strip() for e in lines], __GEN_BETWEEN)
     return lines[1:end_index]
 
 
