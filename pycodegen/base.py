@@ -1,4 +1,6 @@
 import contextlib
+from types import GeneratorType
+
 # noinspection PyUnresolvedReferences
 import cog
 
@@ -45,3 +47,22 @@ def twice():
     with wrap_code_input() as raw:
         code(raw[0])
         code(raw[0])
+
+
+def macro(**kwargs):
+    def make_callable(rng: range):
+        it = iter(rng)
+        return lambda: next(it)
+
+    kwargs = {
+        k: make_callable(v) if isinstance(v, (range, GeneratorType)) else v
+        for k, v in kwargs.items()
+    }
+
+    with wrap_code_input() as raw:
+        for line in raw:
+            for k, v in kwargs.items():
+                key = "{{" + k + "}}"
+                if key in line:
+                    line = line.replace(key, str(v() if callable(v) else v))
+            code(line)
